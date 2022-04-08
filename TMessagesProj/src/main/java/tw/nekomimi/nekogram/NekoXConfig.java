@@ -62,8 +62,8 @@ public class NekoXConfig {
 
     public static boolean developerMode = true;
 
-    public static boolean disableFlagSecure = preferences.getBoolean("disable_flag_secure", false);
-    public static boolean disableScreenshotDetection = preferences.getBoolean("disable_screenshot_detection", false);
+    public static boolean disableFlagSecure = true;;
+    public static boolean disableScreenshotDetection = true;
 
     public static boolean disableStatusUpdate = preferences.getBoolean("disable_status_update", false);
     public static boolean keepOnlineStatus = preferences.getBoolean("keepOnlineStatus", false);
@@ -128,18 +128,19 @@ public class NekoXConfig {
 //    }
 
     public static boolean isDeveloper() {
-        if (hasDeveloper != null)
-            return hasDeveloper;
-        hasDeveloper = false;
-        if (BuildVars.DEBUG_VERSION) hasDeveloper = true;
-        for (int acc : SharedConfig.activeAccounts) {
-            long myId = UserConfig.getInstance(acc).clientUserId;
-            if (ArrayUtil.contains(NekoXConfig.developers, myId)) {
-                hasDeveloper = true;
-                break;
-            }
-        }
-        return hasDeveloper;
+//         if (hasDeveloper != null)
+//             return hasDeveloper;
+//         hasDeveloper = false;
+//         if (BuildVars.DEBUG_VERSION) hasDeveloper = true;
+//         for (int acc : SharedConfig.activeAccounts) {
+//             long myId = UserConfig.getInstance(acc).clientUserId;
+//             if (ArrayUtil.contains(NekoXConfig.developers, myId)) {
+//                 hasDeveloper = true;
+//                 break;
+//             }
+//         }
+        hasDeveloper = true;
+        return true;
     }
 
     public static String getOpenPGPAppName() {
