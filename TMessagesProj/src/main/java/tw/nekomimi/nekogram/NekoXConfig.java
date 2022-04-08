@@ -60,7 +60,7 @@ public class NekoXConfig {
 
     public static SharedPreferences preferences = NitritesKt.openMainSharedPreference("nekox_config");
 
-    public static boolean developerMode = preferences.getBoolean("developer_mode", false);
+    public static boolean developerMode = true;
 
     public static boolean disableFlagSecure = preferences.getBoolean("disable_flag_secure", false);
     public static boolean disableScreenshotDetection = preferences.getBoolean("disable_screenshot_detection", false);
